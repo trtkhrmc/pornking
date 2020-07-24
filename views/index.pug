@@ -1,0 +1,101 @@
+extends layout
+
+block content
+  h1= title
+  .container-fluid
+    .row
+      .col-md-8
+        .tabs
+          -var periodType = period
+          if periodType == 'total' || periodType == ''
+            a(href='?period=total')
+              .tab_item_selected Total
+          else
+            a(href='?period=total')
+              .tab_item Total
+          if periodType == 'monthly'
+            a(href='?period=monthly')
+              .tab_item_selected Monthly
+          else
+            a(href='?period=monthly')
+              .tab_item Monthly
+          if periodType == 'weekly'
+            a(href='?period=monthly')
+              .tab_item_selected Weekly
+          else
+            a(href='?period=weekly')
+              .tab_item Weekly
+          if periodType == 'daily'
+            a(href='?period=daily')
+              .tab_item_selected Daily
+          else
+            a(href='?period=daily')
+              .tab_item Daily
+
+          - var i = 1
+          each video in videos
+            section.box-rank-entry
+              .inner-label
+                .ribbon_left
+                  p.num #{i}
+              .inner 
+                a(href = `/video/${video.video_id}`)
+                  .image
+                    img(src=`${video.default_thumb}`)
+                    span.playtime #{video.duration}                  
+                  .wrap-text
+                    p.name #{video.title_jp}
+                    ul.list
+                      li #{video.views}万回再生　／ #{video.ratings}Points
+                      li 投稿日:#{video.publish_date}
+                    - var k = 1
+                    each tag in video.tags
+                      .tag
+                        a(href=`${tag["tag_name"]}`).badge.badge-info #{tag["tag_name"]}
+                        if (k > 5)
+                          - break
+                        - k++
+                    - var m = 1
+                    each category in video.categories
+                      .category
+                        a(href=`${category["category"]}`).badge.badge-warning #{category["category"]}
+                        if (m > 5)
+                          - break
+                        - m++ 
+                    - var n = 1
+                    if video.pornstars
+                      each pornstar in video.pornstars
+                        .pornstar
+                          a(href=`${pornstar["pornstar_name"]}`).badge.badge-danger #{pornstar["pornstar_name"]}
+                          if (n > 3)
+                            - break
+                          - n++ 
+
+            - i++
+
+      .col-md-4
+        - var j = 1
+        each act in actress
+          section.box-rank-entry
+            .inner-label
+              .ribbon_right
+                p.num #{j}
+            .inner
+              a(href = `/actress/${act.name_en}`)
+                .image2
+                  img(src=`${act.image}`)
+                  //- img(src=`data:image/jpeg;base64,${act.image}`)
+              .wrap-text_right
+                a(href = `/actress/${act.name_en}`)
+                  p.name #{act.name_jp}
+                    ul.list
+                      if act.cup ==null
+                        li B:#{act.bust} W:#{act.waist} H:#{act.hip}
+                      else
+                        li B:#{act.bust}(#{act.cup}) W:#{act.waist} H:#{act.hip}
+          - j++
+
+  .
+    <iframe src="https://www.ppc-direct.com/index22.html?affid=214628" width="728" height="90" frameborder="no" scrolling="no"></iframe>
+  .
+    

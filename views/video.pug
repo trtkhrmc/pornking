@@ -1,0 +1,57 @@
+extends layout
+
+block content
+
+
+  .container-fluid
+    .row
+      .col-md-11
+        .video-area
+          iframe(src =`https://www.pornhub.com/embed/${tgtVideo.video_id}` frameborder="0" width="924" height="520" scrolling="no" allowfullscreen)
+            //- <iframe src= "https://www.pornhub.com/embed/"+'${tgtVideo.video_id}` frameborder="0" width="924" height="520" scrolling="no" allowfullscreen></iframe>
+        .video-ad
+          .
+            <a href="https://click.dtiserv2.com/Click2/2352003-352-214628" target="_blank" rel="noopener"><img src="https://affiliate.dtiserv.com/image/heydouga/2352003.gif" border="0"></a>
+        .video-description
+          p.name #{tgtVideo.title_jp}
+          ul.list
+            li #{tgtVideo.views}万回再生　／　口コミ　評価件数　〇件　いいね　〇件
+            ii 投稿日：#{tgtVideo.publish_date}
+            li タグを表示する！
+            li カテゴリを表示する！
+      .col-md-1
+        .side-bar
+          .
+            <a href="https://click.dtiserv2.com/Click102/1006006-6-214628" target="_blank" rel="noopener"><img src="https://affiliate.dtiserv.com/image/carib/06-150-02.jpg" border="0"></a>
+    .row
+      .col-md-11
+        - var i = 1
+        section.box-relation-entry
+          each video in rltnVideos
+            .inner
+              a(href = `/video/${video.video_id}`)
+                .image
+                  img(src=`${video.default_thumb}`)
+                  span.playtime #{video.duration}
+                p.name #{video.title_jp}
+                  if (i > 7)
+                    - break
+                  - i++
+      .col-md-1
+        .side-bar
+          .
+            <a href="https://click.dtiserv2.com/Click102/1006006-6-214628" target="_blank" rel="noopener"><img src="https://affiliate.dtiserv.com/image/carib/06-150-02.jpg" border="0"></a>                  
+    .row
+      .col-md-11
+        - var i = 1
+        section.box-relation-entry
+          each item in dmmBody.result.items
+            .inner
+              a(href = `${item.affiliateURL}`)
+                .dmm-image
+                  img(src=`${item.imageURL.large}`)
+                p.dmm-name #{item.title}
+                  if (i > 8)
+                    - break
+                  - i++     
+              

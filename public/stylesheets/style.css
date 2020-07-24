@@ -1,0 +1,1079 @@
+/*body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+*/
+
+/*全体に向けたフォント設定*/
+:root{
+  --font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, "Meiryo", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+body {
+  /*font-family: "Helvetica Neue", Helvetica, Arial, "Meiryo UI", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, 'Open Sans', sans-serif; */
+  font-family: "Open Sans","Hiragino Kaku Gothic Pro", Meiryo, sans-serif;
+}
+
+/*タイトル要素に対するフォント設定*/
+h1, h2, h3, h4, h5, h6{
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, "Meiryo UI", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, 'Open Sans', sans-serif;
+}
+
+ol, ul {
+  list-style: none;
+  padding-inline-start: 0px;
+  margin-top:0;
+  margin-bottom:0.3rem;
+}
+/*バッジの間隔変更*/
+.badge {
+  margin: 1.5px 1.5px 1.5px 1.5px;
+}
+
+/* ==================================================
+[Layout]
+================================================== */
+
+
+/* --------------------------------------------------
+ttl-b
+-------------------------------------------------- */
+/* line 48, ../../scss/_rank_common.scss */
+#content-main .cont-rank-detail .ttl-b,
+#content-main .cont-rank-index .ttl-b {
+  font-size: 1.5em;
+  line-height: 1.4;
+}
+
+/* line 156, ../../scss/rank.scss */
+.box-rank-entry {
+  margin: 0 0 10px;
+  padding: 0 0 10px;
+  background: #fff;
+  /* border: 2px solid #eee; */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  
+}
+/* line 162, ../../scss/rank.scss */
+.box-rank-entry .inner-label {
+  position: relative;
+}
+/* line 166, ../../scss/rank.scss */
+.box-rank-entry .inner {
+  display: flex;
+  padding: 10px 10px 0 50px;
+}
+/* line 170, ../../scss/rank.scss */
+.box-rank-entry .inner a {
+  cursor: pointer;
+  /*display: block;*/
+}
+/* line 174, ../../scss/rank.scss */
+.box-rank-entry .inner a:hover {
+  text-decoration: none !important;
+}
+/* line 177, ../../scss/rank.scss */
+.box-rank-entry .inner a:hover .title {
+  text-decoration: underline;
+}
+/* line 180, ../../scss/rank.scss */
+.box-rank-entry .inner a:hover .name {
+  text-decoration: none;
+}
+/* line 186, ../../scss/rank.scss */
+.box-rank-entry .inner .image {
+  width: 210px;
+  height: 150px;
+  vertical-align: top;
+  text-align: left;
+  position: relative;
+  margin-bottom: 0em;
+}
+.box-rank-entry .inner .image2 {
+  width: 105px;
+  height: 105px;
+  vertical-align: top;
+  text-align: left;
+  position: relative;
+  margin-bottom: 0em;
+}
+.box-rank-entry .inner .dmm-image {
+  width: 365px;
+  height: auto;
+  vertical-align: top;
+  text-align: center;
+  position: relative;
+  margin-bottom: 0em;
+}
+/* line 194, ../../scss/rank.scss */
+/*.box-rank-entry .image span {
+  display: block;
+  width: 240px;
+  text-align: left;
+  padding: 0px 0px 0px 4px;
+}*/
+.box-rank-entry .inner .image .playtime,
+.box-relation-entry .inner .playtime{
+  position: absolute;
+  right: 10px;
+  top: 130px;
+  color: azure;
+  background-color: black;
+  font-size: 0.8em;
+}
+/* line 200, ../../scss/rank.scss */
+.box-rank-entry .image img {
+  width: 200px;
+  height: auto;
+  position: relative;
+}
+.box-rank-entry .image2 img {
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+.box-rank-entry .dmm-image img {
+  width: 350px;
+  height: auto;
+  position: relative;
+}
+/* line 206, ../../scss/rank.scss */
+.box-rank-entry .wrap-text {
+  height: auto;
+  vertical-align: top;
+}
+.box-rank-entry .inner .wrap-text a {
+  cursor: pointer;
+  display: block;
+}
+.tag{
+  display : inline-block;
+}
+.category{
+  display : inline-block;
+}
+.pornstar{
+  display : inline-block;
+}
+/*///////////////////////////////////*/
+/*タブ切り替え全体のスタイル*/
+.tabs {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+}
+
+/*タブのスタイル*/
+.tab_item {
+  width: calc(100%/4);
+  margin-bottom: 10px;
+  height: 50px;
+  border-bottom: 3px solid #5ab4bd;
+  background-color: #d9d9d9;
+  line-height: 50px;
+  font-size: 16px;
+  text-align: center;
+  color: #565656;
+  display: inline-block;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+.tab_item:hover {
+  opacity: 0.75;
+}
+
+/*ラジオボタンを全て消す*/
+input[name="tab_item"] {
+  display: none;
+}
+
+/*タブ切り替えの中身のスタイル*/
+.tab_content {
+  display: none;
+  padding: 40px 40px 0;
+  clear: both;
+  overflow: hidden;
+}
+
+
+/*選択されているタブのコンテンツのみを表示
+#all:checked ~ #all_content,
+#Monthly:checked ~ #Monthly_content,
+#Weekly:checked ~ #Weekly_content,
+#Daily:checked ~ #Daily_content {
+  display: block;
+}
+
+/*選択されているタブのスタイルを変える*/
+.tab_item_selected {
+  background-color: #5ab4bd;
+  color: #fff;
+  width: calc(100%/4);
+  height: 50px;
+  border-bottom: 3px solid #5ab4bd;
+  line-height: 50px;
+  font-size: 16px;
+  text-align: center;
+  display: inline-block;
+  font-weight: bold;
+  transition: all 0.2s ease;  
+}
+/*///////////////////////////////////*/
+
+.box-rank-entry .inner .wrap-text .tag a {
+  cursor: pointer;
+  display: inline-block;
+}
+.box-rank-entry .wrap-text_right {
+  height: auto;
+  vertical-align: top;
+}
+/* line 219, ../../scss/rank.scss */
+.box-rank-entry.no-image .wrap-text {
+  display: block;
+  width: 100%;
+}
+/* line 223, ../../scss/rank.scss */
+.box-rank-entry .title {
+  margin: -3px 0 7px;
+  font-size: 1.2em;
+  font-weight: bold;
+  line-height: 1.5;
+}
+/* line 229, ../../scss/rank.scss */
+.box-rank-entry .name,
+.video-description .name{
+  margin: 0 0 17px;
+  color: #555555;
+  font-weight: bold;
+  word-wrap: normal;
+  line-height: 1.2;
+}
+.box-rank-entry .inner .dmm-name{
+  margin: 5px 0 5px;
+  color: #555555;
+  font-weight: normal;
+  line-height: 1em;
+  font-size: 0.95em;
+}
+/* line 237, ../../scss/rank.scss */
+.box-rank-entry .by {
+  margin: 12px 0 17px;
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+  word-wrap: normal;
+  line-height: 1.1;
+  color: #222222;
+}
+/* line 245, ../../scss/rank.scss */
+.box-rank-entry .wrap-text .name,
+.box-rank-entry .wrap-text .by {
+  width: 240;
+}
+.box-rank-entry .wrap-text_right .name,
+.box-rank-entry .wrap-text_right .by {
+  width: 200;
+}
+/* line 249, ../../scss/rank.scss */
+.box-rank-entry.no-image .wrap-text .name, .box-rank-entry.no-image .wrap-text .by {
+  width: 100%;
+}
+
+/* line 255, ../../scss/rank.scss */
+.box-rank-entry .list {
+  color: #555555;
+  font-size: 0.92em;
+}
+/* line 258, ../../scss/rank.scss */
+.box-rank-entry .list li {
+  margin: 7px 0 0;
+  line-height: 1.1;
+  font-size: 1em;
+}
+
+/* line 264, ../../scss/rank.scss */
+.box-rank-entry .status {
+  position: absolute;
+  top: 60px;
+  left: 12px;
+  overflow: hidden;
+  width: 28px;
+  height: 0;
+  padding-top: 20px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  line-height: 2;
+}
+/* line 276, ../../scss/rank.scss */
+.box-rank-entry .status.new {
+  background-image: url(//contents.oricon.co.jp/pc/img/_parts/rank/icon-new01.png);
+}
+/* line 279, ../../scss/rank.scss */
+.box-rank-entry .status.up {
+  background-image: url(//contents.oricon.co.jp/pc/img/_parts/rank/icon-status-up01.png);
+}
+/* line 282, ../../scss/rank.scss */
+.box-rank-entry .status.down {
+  background-image: url(//contents.oricon.co.jp/pc/img/_parts/rank/icon-status-down01.png);
+}
+/* line 285, ../../scss/rank.scss */
+.box-rank-entry .status.stay {
+  background-image: url(//contents.oricon.co.jp/pc/img/_parts/rank/icon-status-stay01.png);
+}
+
+/* line 290, ../../scss/rank.scss */
+.box-rank-entry .crown {
+  position: absolute;
+  top: 50px;
+  left: 14px;
+  overflow: hidden;
+  width: 24px;
+  height: 0;
+  padding-top: 24px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  line-height: 2;
+}
+/* line 301, ../../scss/rank.scss */
+.box-rank-entry .crown.crown01 {
+  background-image: url(//contents.oricon.co.jp/pc/img/_parts/rank/icon-crown1-02.png);
+}
+/* line 304, ../../scss/rank.scss */
+.box-rank-entry .crown.crown02 {
+  background-image: url(//contents.oricon.co.jp/pc/img/_parts/rank/icon-crown2-02.png);
+}
+/* line 307, ../../scss/rank.scss */
+.box-rank-entry .crown.crown03 {
+  background-image: url(//contents.oricon.co.jp/pc/img/_parts/rank/icon-crown3-02.png);
+}
+
+/* line 312, ../../scss/rank.scss */
+.box-rank-entry .ribbon_left{
+  position: absolute;
+  top: -5px;
+  left: 10px;
+  width: 36px;
+  height: 50px;
+  padding-top: 15px;
+  background: url(../images/icon-ribbon01.png) no-repeat 0 0;
+}
+
+.box-rank-entry .ribbon_right{
+  position: absolute;
+  top: -5px;
+  left: 10px;
+  width: 36px;
+  height: 50px;
+  padding-top: 15px;
+  background: url(../images/icon-ribbon02.png) no-repeat 0 0;
+}
+
+/* line 322, ../../scss/rank.scss */
+.box-rank-entry .num {
+  position: absolute;
+  top: 5px;
+  left: 0px;
+  width: 34px;
+  color: #fff;
+  font-family: 'Antic';
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* line 333, ../../scss/rank.scss */
+.box-rank-entry .num-s {
+  top: 15px;
+  font-size: 16px;
+}
+
+/* line 338, ../../scss/rank.scss */
+.box-rank-entry .unit-actions {
+  padding: 20px 10px 0 55px;
+}
+/* line 341, ../../scss/rank.scss */
+.box-rank-entry .unit-actions ul {
+  *zoom: 1;
+}
+/* line 10, ../../scss/_rank_common.scss */
+.box-rank-entry .unit-actions ul:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+/* line 344, ../../scss/rank.scss */
+.box-rank-entry .unit-actions .download {
+  float: left;
+  width: 215px;
+}
+/* line 347, ../../scss/rank.scss */
+.box-rank-entry .unit-actions .download .btn-a {
+  width: 100%;
+  height: 36px;
+  padding: 0;
+  font-size: 1.0em;
+  line-height: 36px;
+}
+/* line 356, ../../scss/rank.scss */
+.box-rank-entry .unit-actions .buy {
+  float: right;
+  width: 215px;
+  position: relative;
+  z-index: 1000;
+}
+/* line 361, ../../scss/rank.scss */
+.box-rank-entry .unit-actions .buy .btn-b {
+  width: 100%;
+  height: 36px;
+  padding: 0;
+  font-size: 1.0em;
+  line-height: 36px;
+  font-weight: bold;
+}
+/* line 368, ../../scss/rank.scss */
+.box-rank-entry .unit-actions .buy .btn-b .icon-arrow-bottom01 {
+  position: relative;
+  left: 3px;
+}
+/* line 374, ../../scss/rank.scss */
+.box-rank-entry .unit-actions .buy .box-buy {
+  display: none;
+  position: absolute;
+  z-index: 50;
+  top: 36px;
+  left: 0;
+  width: 100%;
+  *width: 211px;
+  font-size: 0.93em;
+  background: #fff;
+  border-top: none;
+  border: 2px solid #1F5AA2;
+  background-color: #FFF;
+  z-index: 10;
+}
+/* line 390, ../../scss/rank.scss */
+.box-rank-entry .unit-actions .buy .box-buy li a {
+  position: relative;
+  display: block;
+  *width: 194px;
+  padding: 14px 8px;
+  background: #FFF;
+  border-top: 1px solid #F3F3F3;
+  text-decoration: none;
+  font-weight: normal;
+}
+/* line 401, ../../scss/rank.scss */
+.box-rank-entry .unit-actions .buy .box-buy li:first-child a {
+  border-top: none;
+}
+/* line 405, ../../scss/rank.scss */
+.box-rank-entry .unit-actions .buy .box-buy li a:hover {
+  background: #eee;
+}
+
+/* line 411, ../../scss/rank.scss */
+.ie7 .box-rank-entry .unit-actions .buy .box-buy li a {
+  padding: 8px !important;
+}
+
+/* line 416, ../../scss/rank.scss */
+.box-rank-entry .wrap-text .unit-actions {
+  padding: 15px 0 0;
+}
+/* line 419, ../../scss/rank.scss */
+.box-rank-entry .wrap-text .unit-actions .buy {
+  float: none;
+  width: 100%;
+}
+/* line 423, ../../scss/rank.scss */
+.box-rank-entry .wrap-text .unit-actions .buy .btn-b {
+  width: 100%;
+  font-size: 14px;
+}
+/* line 428, ../../scss/rank.scss */
+.box-rank-entry .wrap-text .unit-actions .buy .box-buy {
+  *width: 306px;
+}
+/* line 430, ../../scss/rank.scss */
+.box-rank-entry .wrap-text .unit-actions .buy .box-buy a {
+  *width: 289px;
+}
+
+/* box-ent-list
+--------------------------- */
+/* line 443, ../../scss/rank.scss */
+.box-ent-list {
+  margin: 0 0 10px;
+  position: relative;
+  background: #ccc;
+}
+/* line 447, ../../scss/rank.scss */
+.box-ent-list a {
+  display: block;
+  position: relative;
+  color: #222222;
+  border-top: 2px solid #3171bd;
+  text-decoration: none !important;
+}
+/* line 454, ../../scss/rank.scss */
+.box-ent-list .inner {
+  padding: 13px 13px 13px 55px;
+  background: #fff;
+  border: 2px solid #eee;
+  border-top: none;
+}
+/* line 460, ../../scss/rank.scss */
+.box-ent-list a:hover .inner {
+  border-color: #3171bd;
+}
+/* line 463, ../../scss/rank.scss */
+.box-ent-list .title {
+  margin: 0 0 12px;
+  color: #222222;
+  font-size: 1.2em;
+  font-weight: bold;
+  line-height: 1.5;
+}
+/* line 470, ../../scss/rank.scss */
+.box-ent-list .ribbon {
+  position: absolute;
+  top: -5px;
+  left: 10px;
+  width: 36px;
+  height: 50px;
+  background-image: url(./images/icon-ribbon01.png);
+}
+/* line 478, ../../scss/rank.scss */
+.box-ent-list .unit-rank3 {
+  color: #555555;
+}
+/* line 480, ../../scss/rank.scss */
+.box-ent-list .unit-rank3 ul {
+  font-size: 0.93em;
+  *zoom: 1;
+}
+/* line 10, ../../scss/_rank_common.scss */
+.box-ent-list .unit-rank3 ul:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+/* line 485, ../../scss/rank.scss */
+.box-ent-list .unit-rank3 li {
+  float: left;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  margin-right: 17px;
+  width: 130px;
+  *width: 100px;
+  padding: 2px 0 0 27px;
+  min-height: 20px;
+  line-height: 1.5;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+/* line 498, ../../scss/rank.scss */
+.box-ent-list .unit-rank3 li.no1 {
+  width: 140px;
+  *width: 120px;
+  background-image: url(//contents.oricon.co.jp/pc/img/_parts/rank/icon-crown1-01.png);
+}
+/* line 502, ../../scss/rank.scss */
+.box-ent-list .unit-rank3 li.no1 .question {
+  position: relative;
+  top: -1px;
+  left: 0;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  overflow: hidden;
+  width: 100px;
+  height: 0;
+  padding-top: 20px;
+  background: url(//contents.oricon.co.jp/pc/img/_parts/rank/text-rank01.png) no-repeat 0 0;
+}
+/* line 516, ../../scss/rank.scss */
+.box-ent-list .unit-rank3 li.no2 {
+  background-image: url(//contents.oricon.co.jp/pc/img/_parts/rank/icon-crown2-01.png);
+}
+/* line 519, ../../scss/rank.scss */
+.box-ent-list .unit-rank3 li.no3 {
+  background-image: url(//contents.oricon.co.jp/pc/img/_parts/rank/icon-crown3-01.png);
+  margin-right: 0px;
+}
+
+/* line 527, ../../scss/rank.scss */
+.ie8 .box-ent-list a:hover,
+.ie7 .box-ent-list a:hover {
+  top: -5px;
+  left: -5px;
+}
+
+/* line 533, ../../scss/rank.scss */
+.ie7 .box-ent-list a {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+/* --------------------------------------------------
+video_page
+-------------------------------------------------- */
+
+.video-area {
+  margin: 30px 0 0px 0;
+  padding: 10px 12px 10px 12px;
+  background: #fff;
+  box-shadow: 0 0 3px 1px #eee inset;
+  align-items: center;
+  text-align: center;
+}
+.video-ad{
+  margin: 0px 0 0px 0;
+  background: #fff;
+  border-left: 2px solid #eee;
+  border-right: 2px solid #eee;
+  border-bottom: 2px solid #eee;
+  text-align: center;
+}
+.video-description{
+  margin: 0px 0 20px 0;
+  background: #fff;
+  border-left: 2px solid #eee;
+  border-right: 2px solid #eee;
+  border-bottom: 2px solid #eee;
+}
+.side-bar{
+  margin: 30px 0 0 0;
+}
+
+.box-relation-entry {
+  margin: 0 0 10px;
+  padding: 0 0 10px;
+  background: #fff;
+  box-shadow: 0 0 3px 1px #eee inset;
+  display : flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.box-relation-entry .inner{
+  margin: 0 0 10px;
+  padding: 10px 10px 0 10px;
+  text-align: center;
+  position: relative;
+}
+.box-relation-entry .inner .name{
+  margin: 5px 0 5px;
+  color: #555555;
+  font-weight: normal;
+  word-wrap: break-word;;
+  line-height: 0.98;
+  font-size: 0.85em;
+  width: 220px;
+}
+.box-relation-entry .inner .dmm-name{
+  margin: 5px 0 5px;
+  color: #555555;
+  font-weight: normal;
+  word-wrap: break-word;;
+  line-height: 0.98;
+  font-size: 0.85em;
+  width: 300px;
+}
+
+.box-relation-entry .inner .image{
+  display: inline-block;
+  width: 210px;
+  height: 150px;
+  vertical-align: top;
+  position: relative;
+  margin-bottom: 0em;
+  text-align: center;
+}
+.box-relation-entry .image img{
+  width: 200px;
+  height: auto;
+  position: relative;
+}
+.box-relation-entry .dmm-image img{
+  width: auto;
+  height: 200px;
+  position: relative;
+}
+
+/* line 542, ../../scss/rank.scss */
+.block-ranking-header {
+  position: relative;
+  padding: 20px 0 18px;
+  border: 2px solid #eeeeee;
+}
+/* line 546, ../../scss/rank.scss */
+.block-ranking-header .inner {
+  width: 445px;
+  margin: 0 auto;
+}
+/* line 550, ../../scss/rank.scss */
+.block-ranking-header .ttl-a {
+  margin: 0 0 20px;
+  padding: 0;
+  font-size: 1.43em;
+  line-height: 1;
+  *line-height: 1.2;
+  text-align: center;
+}
+/* line 558, ../../scss/rank.scss */
+.block-ranking-header .ttl-b {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: 1.04em;
+  line-height: 1;
+  text-align: center;
+}
+/* line 566, ../../scss/rank.scss */
+.block-ranking-header .date {
+  margin: 10px 0 0;
+  font-size: 0.93em;
+  text-align: center;
+}
+/* line 571, ../../scss/rank.scss */
+.block-ranking-header .page-nav a {
+  display: block;
+  position: absolute;
+  top: 40%;
+  overflow: hidden;
+  width: 58px;
+  height: 0;
+  padding-top: 36px;
+  white-space: nowrap;
+  line-height: 1.5;
+  background-image: url(//contents.oricon.co.jp/pc/img/_parts/rank/spr-pager01.png);
+  background-repeat: no-repeat;
+}
+/* line 583, ../../scss/rank.scss */
+.block-ranking-header .page-nav a.prev {
+  left: -5px;
+  background-position: -68px 0;
+}
+/* line 587, ../../scss/rank.scss */
+.block-ranking-header .page-nav a.next {
+  right: -5px;
+  background-position: 0 0;
+}
+/* line 593, ../../scss/rank.scss */
+.block-ranking-header .page-nav a:hover.prev {
+  background-position: -68px -45px;
+}
+/* line 596, ../../scss/rank.scss */
+.block-ranking-header .page-nav a:hover.next {
+  background-position: 0 -45px;
+}
+
+/* line 602, ../../scss/rank.scss */
+.daily .page-nav a {
+  background-image: url(//contents.oricon.co.jp/pc/img/_parts/rank/spr-pager02.png);
+}
+
+/* line 606, ../../scss/rank.scss */
+.monthly .page-nav a {
+  background-image: url(//contents.oricon.co.jp/pc/img/_parts/rank/spr-pager04.png);
+}
+
+/* line 610, ../../scss/rank.scss */
+.year .page-nav a {
+  background-image: url(//contents.oricon.co.jp/pc/img/_parts/rank/spr-pager03.png);
+}
+
+/* --------------------------------------------------
+rank search
+-------------------------------------------------- */
+/* line 617, ../../scss/rank.scss */
+.block-rank-search-box {
+  padding: 11px 11px;
+  background: #eee;
+  *zoom: 1;
+}
+/* line 10, ../../scss/_rank_common.scss */
+.block-rank-search-box:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+/* line 622, ../../scss/rank.scss */
+.block-rank-search-box .wrap-select-year {
+  float: left;
+  width: 98px;
+  *display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  *position: relative;
+  margin-right: 10px;
+}
+/* line 630, ../../scss/rank.scss */
+.block-rank-search-box .wrap-select-year select {
+  *position: absolute;
+  *top: 0;
+  *left: 0;
+}
+/* line 637, ../../scss/rank.scss */
+.block-rank-search-box .wrap-select-month {
+  float: left;
+  *display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  *position: relative;
+  width: 78px;
+  margin-right: 10px;
+}
+/* line 645, ../../scss/rank.scss */
+.block-rank-search-box .wrap-select-month select {
+  *position: absolute;
+  *top: 0;
+  *left: 0;
+}
+/* line 652, ../../scss/rank.scss */
+.block-rank-search-box .wrap-select-week {
+  float: left;
+  *display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  *position: relative;
+  width: 88px;
+  margin-right: 10px;
+}
+/* line 660, ../../scss/rank.scss */
+.block-rank-search-box .wrap-select-week select {
+  *position: absolute;
+  *top: 0;
+  *left: 0;
+}
+/* line 667, ../../scss/rank.scss */
+.block-rank-search-box .rank-select {
+  float: left;
+  display: block;
+  width: 100%;
+  *width: 90%;
+  height: 29px;
+  *height: 26px;
+  padding: 0 0 0 10px;
+  margin-top: -1px;
+  line-height: 29px;
+  *line-height: 26px;
+  background: white url(//contents.oricon.co.jp/pc/img/_parts/common/icon-arrow07.png) no-repeat 90% 50%;
+  color: #888;
+  border: 1px solid #EEEEEE;
+}
+/* line 683, ../../scss/rank.scss */
+.block-rank-search-box .customHover {
+  border: 1px solid #949393;
+  cursor: pointer;
+  *display: inline !important;
+}
+/* line 692, ../../scss/rank.scss */
+.block-rank-search-box .btn-rank-search {
+  float: left;
+  opacity: 1;
+  -webkit-transition: opacity 0.1s linear;
+  transition: opacity 0.1s linear;
+}
+/* line 698, ../../scss/rank.scss */
+.block-rank-search-box .btn-rank-search:hover {
+  filter: alpha(opacity=50);
+  -ms-filter: "alpha( opacity=50 )";
+  opacity: 0.5;
+}
+
+/* --------------------------------------------------
+rank pager
+-------------------------------------------------- */
+/* line 711, ../../scss/rank.scss */
+.block-rank-pager-top {
+  padding: 7px 12px;
+  background: #eeeeee;
+  font-size: 0.92em;
+}
+/* line 715, ../../scss/rank.scss */
+.block-rank-pager-top ul {
+  *zoom: 1;
+}
+/* line 10, ../../scss/_rank_common.scss */
+.block-rank-pager-top ul:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+/* line 718, ../../scss/rank.scss */
+.block-rank-pager-top li {
+  float: left;
+  line-height: 1.2;
+}
+/* line 722, ../../scss/rank.scss */
+.block-rank-pager-top li:after {
+  display: inline-block;
+  padding: 5px 2px;
+  content: "/";
+  color: #b5b5b5;
+}
+/* line 728, ../../scss/rank.scss */
+.block-rank-pager-top li:last-child:after {
+  content: "";
+}
+/* line 731, ../../scss/rank.scss */
+.block-rank-pager-top a {
+  display: inline-block;
+  float: left;
+  height: 20px;
+  line-height: 20px;
+  padding: 0px 8px;
+}
+/* line 738, ../../scss/rank.scss */
+.block-rank-pager-top a.is-active {
+  position: relative;
+  padding: 0 23px;
+  background: #fff;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+/* line 751, ../../scss/rank.scss */
+.block-rank-pager-bottom {
+  padding: 8px 20px 6px;
+  background: #f3f3f3;
+  font-size: 0.92em;
+}
+/* line 755, ../../scss/rank.scss */
+.block-rank-pager-bottom ul {
+  *zoom: 1;
+}
+/* line 10, ../../scss/_rank_common.scss */
+.block-rank-pager-bottom ul:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+/* line 758, ../../scss/rank.scss */
+.block-rank-pager-bottom li {
+  float: left;
+}
+/* line 761, ../../scss/rank.scss */
+.block-rank-pager-bottom a {
+  display: block;
+  float: left;
+  height: 24px;
+  line-height: 24px;
+  padding: 0 15px;
+  *zoom: 1;
+}
+/* line 769, ../../scss/rank.scss */
+.block-rank-pager-bottom a.is-active {
+  position: relative;
+  background: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+}
+/* line 778, ../../scss/rank.scss */
+.block-rank-pager-bottom li.other a {
+  height: 24px;
+  line-height: 24px;
+  padding: 0 10px;
+  *padding: 0 0 0 10px;
+}
+
+/* box-description
+----------------------------------- */
+/* line 792, ../../scss/rank.scss */
+.block-box-description {
+  padding: 11px 12px 10px;
+  background: #f6f6f6;
+}
+/* line 795, ../../scss/rank.scss */
+.block-box-description dt {
+  margin: 0 0 8px;
+  text-indent: -8px;
+  font-weight: bold;
+}
+/* line 800, ../../scss/rank.scss */
+.block-box-description dd {
+  font-size: 0.93em;
+  line-height: 1.61;
+}
+
+/* --------------------------------------------------
+cont-rank-list
+-------------------------------------------------- */
+/* line 809, ../../scss/rank.scss */
+.cont-rank-list .block-social-button {
+  margin-bottom: 18px;
+}
+
+/* line 813, ../../scss/rank.scss */
+.cont-rank-list .block-rank-pager-bottom .icon-blank {
+  background: url(//contents.oricon.co.jp/pc/img/_parts/rank/icon-blank01.png) no-repeat 0 50%;
+}
+
+
+/* --------------------------------------------------
+ADD [hot item] icon 2015/04/09
+-------------------------------------------------- */
+.hot-item {position:relative; height:22px;}
+.hot-item:before {content:" "; display:block; position:absolute; top:50%; right:0; margin:-3px 0 0 0; border-top:2px dotted #ddd; width:100%;}
+.hot-item span {position:absolute; margin:0; border-radius:4px; padding:2px 16px 0px 16px; line-height:140%; background-color:#bcbbbb; color:#fff; font-size:12px; display:inline-block;}
+
+
+/* --------------------------------------------------
+ADD [right tag news] 2016/01/18
+-------------------------------------------------- */
+.block-tag-news table td a{
+  width: 290px;
+  padding: 0 5px 0 10px;
+}
+
+.block-tag-news table td.new_topics a{
+  float: left;
+  width: auto;
+  max-width: 255px;
+  padding: 0 10px 0 10px;
+}
+
+.block-tag-news table td.new_topics span{
+  display: block;
+  height: 43px;
+  padding-top: 14px;
+  float: left;
+}
+
+.box-rank-entry .status2 {
+  width: 19px;
+  height: 0;
+  float:left;
+  margin:0 0 0 2px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  padding-top:19px;
+  overflow: hidden;
+}
+
+.box-rank-entry .status2.cd {
+  background-image: url(//contents.oricon.co.jp/pc/img/_parts/rank/icon-status-cd.png);
+}
+.box-rank-entry .status2.dl {
+  background-image: url(//contents.oricon.co.jp/pc/img/_parts/rank/icon-status-dl.png);
+}
+.box-rank-entry .status2.st {
+  background-image: url(//contents.oricon.co.jp/pc/img/_parts/rank/icon-status-st.png);
+}
+
+.box-rank-entry .name{
+    margin: 0;
+}

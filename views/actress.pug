@@ -1,0 +1,66 @@
+extends layout
+
+block content
+  h1= tgtActress.name_jp
+  .container-fluid
+    .row
+      .col-md-7
+        - var i = 1
+        each video in tgtVideo
+          section.box-rank-entry
+            .inner-label
+              .ribbon_left
+                p.num #{i}
+            .inner 
+              a(href = `/video/${video.video_id}`)
+                .image
+                  img(src=`${video.default_thumb}`)
+                  span.playtime #{video.duration}                  
+                .wrap-text
+                  p.name #{video.title_jp}
+                  ul.list
+                    li #{video.views}万回再生　／ #{video.ratings}Points
+                    li 投稿日:#{video.publish_date}
+                  - var k = 1
+                  each tag in video.tags
+                    .tag
+                      a(href=`${tag["tag_name"]}`).badge.badge-info #{tag["tag_name"]}
+                      if (k > 5)
+                        - break
+                      - k++
+                  - var m = 1
+                  each category in video.categories
+                    .category
+                      a(href=`${category["category"]}`).badge.badge-warning #{category["category"]}
+                      if (m > 5)
+                        - break
+                      - m++ 
+                  - var n = 1
+                  if video.pornstars
+                    each pornstar in video.pornstars
+                      .pornstar
+                        a(href=`${pornstar["pornstar_name"]}`).badge.badge-danger #{pornstar["pornstar_name"]}
+                        if (n > 3)
+                          - break
+                        - n++ 
+
+          - i++
+
+      .col-md-5
+        - var j = 1
+        each item in dmmBody.result.items
+          section.box-rank-entry
+            .inner-label
+              .ribbon_right
+                p.num #{j}
+            .inner
+              a(href = `${item.affiliateURL}`)
+                .dmm-image
+                  img(src=`${item.imageURL.large}`)
+                p.dmm-name #{item.title}
+          - j++
+
+  .
+    <iframe src="https://www.ppc-direct.com/index22.html?affid=214628" width="728" height="90" frameborder="no" scrolling="no"></iframe>
+  .
+    
