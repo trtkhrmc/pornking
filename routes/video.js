@@ -27,24 +27,53 @@ let options = {
 }
 
 router.get('/:videoId', function(req, res, next){
+
   Video.findOne({
     where: {
       video_id : req.params.videoId
     }
   }).then((videos) => {
     tgtVideo = videos;
-    return Video.findAll({
-      order: [['views','DESC']],
-      where : {
-        categories : {
-          [Op.or] : {
-            [Op.contains] : [{"category":videos.categories[0].category}],
-            [Op.contains] : [{"category":videos.categories[1].category}],
-            [Op.contains] : [{"category":videos.categories[2].category}]
+
+    if (tgtVideo.categories.length >= 3){
+      return Video.findAll({
+        order: [['views','DESC']],
+        where : {
+          categories : {
+            [Op.or] : {
+              [Op.contains] : [{"category":videos.categories[0].category}],
+              [Op.contains] : [{"category":videos.categories[1].category}],
+              [Op.contains] : [{"category":videos.categories[2].category}]
+            }
           }
         }
-      }
-    }) 
+      })      
+    }else if(tgtVideo.categories.length == 2){
+      return Video.findAll({
+        order: [['views','DESC']],
+        where : {
+          categories : {
+            [Op.or] : {
+              [Op.contains] : [{"category":videos.categories[0].category}],
+              [Op.contains] : [{"category":videos.categories[1].category}]
+            }
+          }
+        }
+      })      
+    }else if(tgtVideo.categories.length == 1){
+      return Video.findAll({
+        order: [['views','DESC']],
+        where : {
+          categories : {
+            [Op.contains] : [{"category":videos.categories[0].category}]
+          }
+        }
+      })
+    }else{
+      return Video.findAll({
+        order: [['views','DESC']],
+      })
+    }
   }).then((videos) =>{
     rltnVideos = videos;
     return request(options , (error,response,body) => {
@@ -62,9 +91,6 @@ router.get('/:videoId', function(req, res, next){
     });
   })
 });
-
-
-
 
 
 module.exports = router;

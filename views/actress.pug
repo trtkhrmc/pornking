@@ -1,37 +1,87 @@
 extends layout
 
 block content
-  h1= tgtActress.name_jp
-  .container-fluid
-    .row
-      .col-md-7
-        - var i = 1
+  h3= tgtActress.name_jp
+  
+  .row
+    .col-md-7.col-xs-12
+      .tabs
+        -var periodType = period
+        if periodType == 'total' || periodType == ''
+          a(href='?period=total')
+            .tab_item_selected Total
+        else
+          a(href='?period=total')
+            .tab_item Total
+        if periodType == 'monthly'
+          a(href='?period=monthly')
+            .tab_item_selected Monthly
+        else
+          a(href='?period=monthly')
+            .tab_item Monthly
+        if periodType == 'weekly'
+          a(href='?period=monthly')
+            .tab_item_selected Weekly
+        else
+          a(href='?period=weekly')
+            .tab_item Weekly
+        if periodType == 'daily'
+          a(href='?period=daily')
+            .tab_item_selected Daily
+        else
+          a(href='?period=daily')
+            .tab_item Daily
+
+        .nav-links
+          each page in pages
+            if (page == '«')
+              a(href=`?page=${currentPage - 1}`).prev.page-numbers #{page}
+            else if (page == currentPage)
+              span.page-numbers.current #{page}
+            else if (page == '...')
+              span.page-numbers.dots #{page}
+            else if  (page == '»')
+              -var nextP = currentPage * 1 +1
+              if nextP > page_max
+                a(href=`?page=${page_max}`).next.page-numbers #{page}
+              else
+                a(href=`?page=${nextP}`).next.page-numbers #{page}
+            else
+              a(href=`?page=${page}`).page-numbers #{page}
+
+        - var i = (currentPage - 1) * 20 + 1
         each video in tgtVideo
           section.box-rank-entry
             .inner-label
               .ribbon_left
                 p.num #{i}
-            .inner 
+            .inner.sp_only
               a(href = `/video/${video.video_id}`)
                 .image
                   img(src=`${video.default_thumb}`)
-                  span.playtime #{video.duration}                  
+                  span.playtime #{video.duration}
+              a(href = `/video/${video.video_id}`)                    
                 .wrap-text
-                  p.name #{video.title_jp}
+                  if video.title_jp
+                    p.name #{video.title_jp}
+                  else
+                    p.name #{video.title}
                   ul.list
-                    li #{video.views}万回再生　／ #{video.ratings}Points
+                    li #{video.views}万回再生　／ Score:#{video.score}Points
                     li 投稿日:#{video.publish_date}
                   - var k = 1
                   each tag in video.tags
                     .tag
-                      a(href=`${tag["tag_name"]}`).badge.badge-info #{tag["tag_name"]}
+                      //a(href=`${tag["tag_name"]}`).badge.badge-info #{tag["tag_name"]}
+                      .badge.badge-info #{tag["tag_name"]}
                       if (k > 5)
                         - break
                       - k++
                   - var m = 1
                   each category in video.categories
                     .category
-                      a(href=`${category["category"]}`).badge.badge-warning #{category["category"]}
+                      //a(href=`${category["category"]}`).badge.badge-warning #{category["category"]}
+                      .badge.badge-warning #{category["category"]}
                       if (m > 5)
                         - break
                       - m++ 
@@ -39,28 +89,59 @@ block content
                   if video.pornstars
                     each pornstar in video.pornstars
                       .pornstar
-                        a(href=`${pornstar["pornstar_name"]}`).badge.badge-danger #{pornstar["pornstar_name"]}
+                        //a(href=`${pornstar["pornstar_name"]}`).badge.badge-danger #{pornstar["pornstar_name"]}
+                        .badge.badge-danger #{pornstar["pornstar_name"]}
                         if (n > 3)
                           - break
                         - n++ 
+          if i == 10
+            .video-ad
+              .ad-item.pc_only
+                iframe(src="https://www.ppc-direct.com/index22.html?affid=214628" frameborder="no" scrolling="no" align="center")
+              .ad-item.sp_only
+                iframe(src="https://www.mmaaxx.com/table/carib/en/index01.html?affid=214628" width="300" height="250" frameborder="no" scrolling="no" title='カリビアンコム動画バナー')
 
           - i++
 
-      .col-md-5
-        - var j = 1
-        each item in dmmBody.result.items
-          section.box-rank-entry
-            .inner-label
-              .ribbon_right
-                p.num #{j}
-            .inner
-              a(href = `${item.affiliateURL}`)
-                .dmm-image
-                  img(src=`${item.imageURL.large}`)
-                p.dmm-name #{item.title}
-          - j++
+        .nav-links
+          each page in pages
+            if (page == '«')
+              a(href=`?page=${currentPage - 1}`).prev.page-numbers #{page}
+            else if (page == currentPage)
+              span.page-numbers.current #{page}
+            else if (page == '...')
+              span.page-numbers.dots #{page}
+            else if  (page == '»')
+              -var nextP = currentPage * 1 +1
+              if nextP > page_max
+                a(href=`?page=${page_max}`).next.page-numbers #{page}
+              else
+                a(href=`?page=${nextP}`).next.page-numbers #{page}
+            else
+              a(href=`?page=${page}`).page-numbers #{page}
+      .video-ad
+        .ad-item.pc_only
+          iframe(src="https://www.ppc-direct.com/index22.html?affid=214628" frameborder="no" scrolling="no" align="center")
+        .ad-item.sp_only
+          a(href="https://click.dtiserv2.com/Click/2006006-6-214628" target="_blank" rel="noopener")
+            img(src="https://affiliate.dtiserv.com/image/carib/06-300-04.gif" border="0")
 
-  .
-    <iframe src="https://www.ppc-direct.com/index22.html?affid=214628" width="728" height="90" frameborder="no" scrolling="no"></iframe>
-  .
+    .col-md-5.col-xs-12
+      - var j = 1
+      each item in dmmBody.result.items
+        section.box-rank-entry
+          .inner-label
+            .ribbon_right
+              p.num #{j}
+          .inner
+            a(href = `${item.affiliateURL}`)
+              .dmm-image
+                img(src=`${item.imageURL.large}`)
+              p.dmm-name #{item.title}
+        - j++
+      .video-ad
+        .ad-item.sp_only
+          a(href="https://click.dtiserv2.com/Click/2006007-6-214628" target="_blank" rel="noopener")
+            img(src="https://affiliate.dtiserv.com/image/carib/06-200-01.gif" border="0")
+
     

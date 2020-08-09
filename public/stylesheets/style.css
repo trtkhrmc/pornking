@@ -38,7 +38,13 @@ ol, ul {
 /* ==================================================
 [Layout]
 ================================================== */
-
+.logo_img img{
+  width: 132px;
+  height: 55px;
+}
+.maxWidth {
+  max-width:1200px;
+  }
 
 /* --------------------------------------------------
 ttl-b
@@ -68,6 +74,7 @@ ttl-b
   display: flex;
   padding: 10px 10px 0 50px;
 }
+
 /* line 170, ../../scss/rank.scss */
 .box-rank-entry .inner a {
   cursor: pointer;
@@ -103,10 +110,10 @@ ttl-b
   margin-bottom: 0em;
 }
 .box-rank-entry .inner .dmm-image {
-  width: 365px;
+  width: 95%;
   height: auto;
   vertical-align: top;
-  text-align: center;
+  padding:auto;
   position: relative;
   margin-bottom: 0em;
 }
@@ -138,7 +145,7 @@ ttl-b
   position: relative;
 }
 .box-rank-entry .dmm-image img {
-  width: 350px;
+  width: 100%;
   height: auto;
   position: relative;
 }
@@ -224,6 +231,45 @@ input[name="tab_item"] {
   transition: all 0.2s ease;  
 }
 /*///////////////////////////////////*/
+
+/*///////////////////////////////////////
+/* ページネーションの設定 */
+
+.nav-links{
+  padding:0.5em;
+  display:flex;
+  justify-content:center;
+}
+.nav-links a,
+.nav-links span{
+  width:40px;
+  height:40px;
+  margin:2px;
+  line-height:40px;
+  text-align:center;
+  font-size:12px;
+  font-weight:bold;
+  text-decoration:none;
+  background:#fff;
+  color:#222;
+  transition:.3s;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.nav-links a:hover{
+  background:#90caf9 ;
+  border-radius:100%;
+  transform:rotate(360deg);
+}
+.nav-links .current{
+  background:#90caf9;
+  border-radius:100%;
+}
+.nav-links .dots{
+  background:none;
+}
+/*///////////////////////////////////////
+
+
 
 .box-rank-entry .inner .wrap-text .tag a {
   cursor: pointer;
@@ -506,124 +552,6 @@ input[name="tab_item"] {
   *width: 289px;
 }
 
-/* box-ent-list
---------------------------- */
-/* line 443, ../../scss/rank.scss */
-.box-ent-list {
-  margin: 0 0 10px;
-  position: relative;
-  background: #ccc;
-}
-/* line 447, ../../scss/rank.scss */
-.box-ent-list a {
-  display: block;
-  position: relative;
-  color: #222222;
-  border-top: 2px solid #3171bd;
-  text-decoration: none !important;
-}
-/* line 454, ../../scss/rank.scss */
-.box-ent-list .inner {
-  padding: 13px 13px 13px 55px;
-  background: #fff;
-  border: 2px solid #eee;
-  border-top: none;
-}
-/* line 460, ../../scss/rank.scss */
-.box-ent-list a:hover .inner {
-  border-color: #3171bd;
-}
-/* line 463, ../../scss/rank.scss */
-.box-ent-list .title {
-  margin: 0 0 12px;
-  color: #222222;
-  font-size: 1.2em;
-  font-weight: bold;
-  line-height: 1.5;
-}
-/* line 470, ../../scss/rank.scss */
-.box-ent-list .ribbon {
-  position: absolute;
-  top: -5px;
-  left: 10px;
-  width: 36px;
-  height: 50px;
-  background-image: url(./images/icon-ribbon01.png);
-}
-/* line 478, ../../scss/rank.scss */
-.box-ent-list .unit-rank3 {
-  color: #555555;
-}
-/* line 480, ../../scss/rank.scss */
-.box-ent-list .unit-rank3 ul {
-  font-size: 0.93em;
-  *zoom: 1;
-}
-/* line 10, ../../scss/_rank_common.scss */
-.box-ent-list .unit-rank3 ul:after {
-  content: '';
-  display: table;
-  clear: both;
-}
-/* line 485, ../../scss/rank.scss */
-.box-ent-list .unit-rank3 li {
-  float: left;
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
-  margin-right: 17px;
-  width: 130px;
-  *width: 100px;
-  padding: 2px 0 0 27px;
-  min-height: 20px;
-  line-height: 1.5;
-  background-position: 0 0;
-  background-repeat: no-repeat;
-}
-/* line 498, ../../scss/rank.scss */
-.box-ent-list .unit-rank3 li.no1 {
-  width: 140px;
-  *width: 120px;
-  background-image: url(//contents.oricon.co.jp/pc/img/_parts/rank/icon-crown1-01.png);
-}
-/* line 502, ../../scss/rank.scss */
-.box-ent-list .unit-rank3 li.no1 .question {
-  position: relative;
-  top: -1px;
-  left: 0;
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
-  overflow: hidden;
-  width: 100px;
-  height: 0;
-  padding-top: 20px;
-  background: url(//contents.oricon.co.jp/pc/img/_parts/rank/text-rank01.png) no-repeat 0 0;
-}
-/* line 516, ../../scss/rank.scss */
-.box-ent-list .unit-rank3 li.no2 {
-  background-image: url(//contents.oricon.co.jp/pc/img/_parts/rank/icon-crown2-01.png);
-}
-/* line 519, ../../scss/rank.scss */
-.box-ent-list .unit-rank3 li.no3 {
-  background-image: url(//contents.oricon.co.jp/pc/img/_parts/rank/icon-crown3-01.png);
-  margin-right: 0px;
-}
-
-/* line 527, ../../scss/rank.scss */
-.ie8 .box-ent-list a:hover,
-.ie7 .box-ent-list a:hover {
-  top: -5px;
-  left: -5px;
-}
-
-/* line 533, ../../scss/rank.scss */
-.ie7 .box-ent-list a {
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-}
-
 /* --------------------------------------------------
 video_page
 -------------------------------------------------- */
@@ -638,11 +566,29 @@ video_page
 }
 .video-ad{
   margin: 0px 0 0px 0;
+  height: auto;
   background: #fff;
   border-left: 2px solid #eee;
   border-right: 2px solid #eee;
   border-bottom: 2px solid #eee;
   text-align: center;
+}
+.ad-item.pc_only iframe{
+  margin: 0 auto 0px;
+  width: 95%;
+  height: 100px;
+  display: block;
+}
+.ad-item.sp_only iframe{
+  margin: 0 auto 0px;
+  width: 300px;
+  height: 250px;
+  display: block;
+}
+.ad-item img{
+  margin: 0 auto 10px;
+  width: auto;
+  display: block;
 }
 .video-description{
   margin: 0px 0 20px 0;
@@ -650,9 +596,11 @@ video_page
   border-left: 2px solid #eee;
   border-right: 2px solid #eee;
   border-bottom: 2px solid #eee;
+  padding-left: 20px;
 }
 .side-bar{
   margin: 30px 0 0 0;
+  display : block;
 }
 
 .box-relation-entry {
@@ -927,14 +875,7 @@ rank pager
 .block-rank-pager-top li:last-child:after {
   content: "";
 }
-/* line 731, ../../scss/rank.scss */
-.block-rank-pager-top a {
-  display: inline-block;
-  float: left;
-  height: 20px;
-  line-height: 20px;
-  padding: 0px 8px;
-}
+
 /* line 738, ../../scss/rank.scss */
 .block-rank-pager-top a.is-active {
   position: relative;
@@ -1064,16 +1005,40 @@ ADD [right tag news] 2016/01/18
   overflow: hidden;
 }
 
-.box-rank-entry .status2.cd {
-  background-image: url(//contents.oricon.co.jp/pc/img/_parts/rank/icon-status-cd.png);
-}
-.box-rank-entry .status2.dl {
-  background-image: url(//contents.oricon.co.jp/pc/img/_parts/rank/icon-status-dl.png);
-}
-.box-rank-entry .status2.st {
-  background-image: url(//contents.oricon.co.jp/pc/img/_parts/rank/icon-status-st.png);
-}
-
 .box-rank-entry .name{
     margin: 0;
+}
+
+
+footer{
+    background: #2d2d2d;
+    padding: 10px;
+    text-align: center;
+}
+small {
+  color: #fff;
+}
+
+@media (max-width:400px){
+  .pc_only{
+    display: none !important;
+  }
+  .sp_only{
+    display: block !important;
+  }
+  .box-rank-entry .inner .image {
+    width: 280px;
+    text-align: center;
+  }
+  .box-rank-entry .inner .image .playtime,
+  .box-relation-entry .inner .playtime{
+    position: absolute;
+    right: 40px;
+  }
+  .ad-item img{
+    width: 100%;
+  }
+
+
+
 }
