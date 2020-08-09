@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    title Pornking
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    //- link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='icon', href='/images/favicon.png')
+  body
+    nav.navbar.navbar-expand-sm.navbar-dark.bg-dark
+      div.navbar-header
+        // a(href="/").navbar-brand.nav-link Pornking
+        a(href="/")
+          .logo_img
+            img(src="/images/logo.png")
+      button(type="button" data-toggle="collapse" data-target="#navbarList" aria-controls="navbarList" aria-expanded="false" aria-label="ナビゲーションの切替" ).navbar-toggler
+        span.navbar-toggler-icon
+      div.collapse.navbar-collapse#navbarList
+        ul.navbar-nav
+          li.nav-item
+            a(href="/").nav-link   HOME　　
+          li.nav-item
+            a(href="/actress").nav-link   女優 - Actress -　　
+          li.nav-item
+            a(href="/contents2").nav-link   カテゴリ - Category -　　
+    div.container-fluid.maxWidth
+      block content
+    script(src="/javascripts/bundle.js")
+  footer
+    small Copyright &copy; Pornking since 2020
+  
