@@ -5,6 +5,7 @@ block content
   p 独自集計でアダルト動画をランキング形式で紹介するサイトです。毎日更新！対応サイトは順次拡大中。
   .row
     .col-md-8.col-xs-12
+      h3 動画ランキング
       .tabs
         -var periodType = period
         if periodType == 'total' || periodType == ''
@@ -130,6 +131,7 @@ block content
 
 
     .col-md-4.col-xs-12
+      h3 女優ランキング
       - var j = 1
       each act in actress
         section.box-rank-entry

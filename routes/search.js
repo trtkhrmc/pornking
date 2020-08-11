@@ -20,7 +20,7 @@ const ph = new PornHub();
 var result={};
 
 router.get('/pornohub',(req, res, next)=>{
-  for(let pg = 1; pg < 2; pg++ ){  //3ページまで自動取得する
+  for(let pg = 1; pg < 3; pg++ ){  //3ページまで自動取得する
     ph.search({search:encodeURIComponent(req.query.search),page:pg,category:'Japanese'}).then(async (infos) =>{
       result = infos.videos;
       const updatedAt = new Date();
